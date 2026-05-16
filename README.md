@@ -1,4 +1,4 @@
-# GetVersionEx-Test-Windows-Internals-Day-1
+# GetVersionEx Test
 
 A small C++ test program demonstrating the quirky behaviour of the Windows `GetVersionEx` API on modern versions of Windows.
 
