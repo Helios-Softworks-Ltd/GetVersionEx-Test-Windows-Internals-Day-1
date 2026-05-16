@@ -1,1 +1,1 @@
-# GetVersionEx-Test-Windows-Internals-Day-1-
+# GetVersionEx-Test-Windows-Internals-Day-1
