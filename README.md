@@ -41,6 +41,16 @@ The fix solved one problem but created plenty of fresh confusion:
 - Software that genuinely needs the real version has to use workarounds like `RtlGetVersion` (from `ntdll.dll`), reading the file version of `kernel32.dll`, or checking the registry directly
 - Even Windows 11 reports as `10.0` internally — there is no `11.0` — so detecting Windows 11 requires looking at the build number (≥ 22000), not the major version
 
+## Seeing the Fix in Action
+
+I've added an `app.manifest` file to the repo that declares support for Windows 8.1, Windows 10, and Windows 11. To see `GetVersionEx` report the real OS version, just uncomment the following line in the `CMakeLists.txt`:
+
+```cmake
+#app.manifest
+```
+
+Rebuild and run the program — `GetVersionEx` will now report `10.0.x` on Windows 10 / 11 instead of `6.2.9200`.
+
 ## Takeaway
 
 `GetVersionEx` still exists, but it's no longer a reliable way to check the OS version. It's a great teaching example of how API design, backwards compatibility, and developer behaviour interact in messy ways inside an OS as widely deployed as Windows.
