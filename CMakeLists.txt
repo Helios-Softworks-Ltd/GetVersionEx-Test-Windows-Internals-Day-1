@@ -10,7 +10,8 @@ add_definitions(
 
 project(windows_internals CXX)
 
-add_executable(getversionex
-source.cpp)
+add_executable(getversionex source.cpp
+#app.manifest
+)
 
 target_compile_features(getversionex PUBLIC cxx_std_23)
